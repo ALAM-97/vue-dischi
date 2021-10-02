@@ -1,17 +1,18 @@
 <template>
     <div class="card">
         <div class="info">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-            <h2>NEW JERSEY</h2>
-            <h4>Bon Jovi</h4>
-            <h5>1988</h5>
+            <img :src="info.poster">
+            <h2>{{info.title}}</h2>
+            <h4>{{info.author}}</h4>
+            <h5>{{info.year}}</h5>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Album'
+    name: 'Album',
+    props: ['info']
 }
 </script>
 
@@ -27,12 +28,14 @@ export default {
             .info {
                 padding: 17.5px 10px;
                 img {
-                width: 90%;
-                margin-bottom: 15px;
+                    width: 150px;
+                    height: 150px;
+                    margin-bottom: 15px;
                 }
                 h2 {
                     color: #fff;
                     margin-bottom: 30px;
+                    font-size: 1.3rem;
                 }
                 h4, h5 {
                     color: #55626e;
