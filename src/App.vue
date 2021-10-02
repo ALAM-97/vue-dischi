@@ -19,5 +19,9 @@ export default {
 </script>
 
 <style lang="scss">
+    @import './style/common.scss';
 
+    #app {
+      background-color: $bodyBg;
+    }
 </style>
