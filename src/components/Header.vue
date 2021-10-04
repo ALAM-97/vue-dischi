@@ -1,20 +1,26 @@
 <template>
     <header>
         <img src="../assets/spotify-logo.png" alt="">
-        <select name="" @change="$emit('filter', 'genre')">
-            <option :value="All" selected>Seleziona un genere...</option>
-            <option :value="Rock">Rock</option>
-            <option :value="Pop">Pop</option>
-            <option :value="Jazz">Jazz</option>
-            <option :value="Metal">Metal</option>
+        <select v-model="genre" name="" @change="$emit('filter', genre)">
+            <option value="All" selected>Seleziona un genere...</option>
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Metal">Metal</option>
         </select>
     </header>
 </template>
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+    data() {
+        return {
+            genre: ""
+        }
+    }
 }
+
 </script>
 
 <style lang="scss" scoped>

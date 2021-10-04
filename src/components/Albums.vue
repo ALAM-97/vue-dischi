@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <Album :key="index" v-for="(album, index) in albums" :info="album"/>
+        <Album :key="index" v-for="(album, index) in filterAlbums" :info="album"/>
     </div>
 </template>
 
@@ -13,6 +13,7 @@ export default {
     components: {
         Album
     },
+    props: ["filt"],
     data() {
         return {
             albums: []
@@ -25,6 +26,17 @@ export default {
                 this.albums = resp.data.response;
         })
     },
+    computed: {
+        filterAlbums() {
+            if (this.filt === "") {
+                return this.albums
+            } else {
+                return this.albums.filter(
+                (item) => item.genre === this.filt
+            );
+            }
+        }
+    }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header/>
-    <Albums/>
+    <Header  @filter="albumsFiltered"/>
+    <Albums :filt="genreSelected"/>
   </div>
 </template>
 
@@ -11,9 +11,20 @@ import Albums from './components/Albums.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      genreSelected: "",
+      filteredGenres: [],
+    }
+  },
   components: {
     Header,
     Albums
+  },
+  methods: {
+    albumsFiltered(genre) {
+          this.genreSelected = genre;
+        }
   }
 }
 </script>
