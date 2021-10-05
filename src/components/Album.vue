@@ -23,13 +23,14 @@ export default {
         width: calc(100% / 5 - 20px);
         height: 330px;
         background-color: $headerBg;
+        margin: 10px;
         margin-bottom: 20px;
         text-align: center;
             .info {
                 padding: 17.5px 10px;
                 img {
-                    width: 150px;
-                    height: 150px;
+                    width: 90%;
+                    min-height: 150px;
                     margin-bottom: 15px;
                 }
                 h2 {

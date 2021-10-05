@@ -1,8 +1,8 @@
 <template>
     <header>
         <img src="../assets/spotify-logo.png" alt="">
-        <select v-model="genre" name="" @change="$emit('filter', genre)">
-            <option value="All" selected>Seleziona un genere...</option>
+        <select v-model="genre" @change="$emit('filter', genre)" placeholder="Seleziona un genere...">
+            <option selected value="All">All</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
             <option value="Jazz">Jazz</option>

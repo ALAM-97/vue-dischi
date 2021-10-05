@@ -28,7 +28,7 @@ export default {
     },
     computed: {
         filterAlbums() {
-            if (this.filt === "") {
+            if (this.filt === "All" || this.filt === "") {
                 return this.albums
             } else {
                 return this.albums.filter(
@@ -48,7 +48,6 @@ export default {
         margin: 70px auto;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
 
 </style>
